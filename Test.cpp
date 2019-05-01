@@ -103,6 +103,10 @@ int main() {
 			testcase.CHECK_EQUAL(play(randy, smarty, 4, 100)<=100, true);  // smarty should always win in at most 10 turns!
 		}
 
+		string s="1234";
+
+		cout<<"hfkjdkhdjhdxjhdxjhdjg"<<s.at(0)-48<<endl;
+
     grade = testcase.grade();
 	} else {
 		testcase.print_signal(signal);
