@@ -15,16 +15,6 @@ using namespace std;
             this->myTry = "0000";
             this->numOfBull = 0;
             this->numOfPgia = 0;
-        for(int i=0 ;i<=9; i++){
-			for(int k=0 ;k<=9; k++){
-				for(int w=0 ;w<=9; w++){
-					for(int j=0 ;j<=9; j++){
-						string ans= to_string(i) + to_string(k) + to_string(w)+ to_string(j) ; 
-						this->allOptions.push_back(ans);
-					}
-				}
-			}
-		}
      }
 
     string  bullpgia::SmartGuesser::guess() {
@@ -55,4 +45,43 @@ using namespace std;
       this->numOfBull=ibull;
       this->numOfPgia=ipgia;
 
+}
+void bullpgia::SmartGuesser::startNewGame(uint length){
+    SmartGuesser();
+    if (length==4){
+    for(int i=0 ;i<=9; i++){ 
+			for(int k=0 ;k<=9; k++){
+				for(int w=0 ;w<=9; w++){
+					for(int j=0 ;j<=9; j++){
+						string ans= to_string(i) + to_string(k) + to_string(w)+ to_string(j) ; 
+						this->allOptions.push_back(ans);
+					}
+				}
+			}
+        }
+    }
+    if (length==3){
+			for(int k=0 ;k<=9; k++){
+				for(int w=0 ;w<=9; w++){
+					for(int j=0 ;j<=9; j++){
+						string ans= to_string(i) + to_string(k) + to_string(w)+ to_string(j) ; 
+						this->allOptions.push_back(ans);
+					}
+				}
+			}
+    }
+    if (length==2){
+				for(int w=0 ;w<=9; w++){
+					for(int j=0 ;j<=9; j++){
+						string ans= to_string(i) + to_string(k) + to_string(w)+ to_string(j) ; 
+						this->allOptions.push_back(ans);
+					}
+				}
+			}
+    if (length==1){
+			for(int j=0 ;j<=9; j++){
+				string ans= to_string(i) + to_string(k) + to_string(w)+ to_string(j) ; 
+				this->allOptions.push_back(ans);
+			}
+		}		
 };
