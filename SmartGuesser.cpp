@@ -7,7 +7,8 @@
 #include <iostream> 
 #include "SmartGuesser.hpp"
 #include "calculate.hpp"
-#include <vector> 
+#include <list> 
+#include <iterator> 
 using namespace std; 
 
 
@@ -19,16 +20,6 @@ using namespace std;
 
     string  bullpgia::SmartGuesser::guess() {
              this->myTry= this->allOptions.front();
-             int i=0;
-             for (std::vector<string>::iterator it = allOptions.begin() ; it != allOptions.end(); ++it){
-                 i++;
-                    string answer=calculateBullAndPgia(this->myTry,this->allOptions.at(i));
-                   if((stoi(answer.substr(0,answer.find(",")))!= this->numOfBull )|| (stoi(answer.substr(answer.find(",")+1,answer.length()))!=this->numOfPgia)){
-                       //0this->allOptions.remove(this->allOptions.at(i));
-                       this->allOptions.erase(it);
-                   }
-               }
-             
          return this->myTry;
     }
 
@@ -36,18 +27,23 @@ using namespace std;
 
   void bullpgia::SmartGuesser::learn(string firstTry){
 
-      string sbull= firstTry.substr(0,firstTry.find(","));
-      int ibull= stoi(sbull);
-
-      string spgia= firstTry.substr(firstTry.find(",")+1,firstTry.length());
-      int ipgia= stoi(spgia); 
-
-      this->numOfBull=ibull;
-      this->numOfPgia=ipgia;
+      for (auto itr = allOptions.begin(); itr != allOptions.end(); itr++)
+    {
+        if (firstTry != calculateBullAndPgia(myTry, *itr))
+        {
+            itr = allOptions.erase(itr);
+        }
+    }
 
 }
+
 void bullpgia::SmartGuesser::startNewGame(uint length){
     SmartGuesser();
+    if (!allOptions.empty())
+    {
+        allOptions.clear();
+    }
+
     if (length==4){
     for(int i=0 ;i<=9; i++){ 
 			for(int k=0 ;k<=9; k++){

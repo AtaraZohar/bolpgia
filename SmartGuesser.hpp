@@ -2,7 +2,7 @@
 #include "Guesser.hpp"
 #include "calculate.hpp"
 using std::string;
-#include <vector> 
+#include <list> 
 using namespace std; 
 
  namespace bullpgia {
@@ -10,7 +10,7 @@ class SmartGuesser: public bullpgia::Guesser{
     public:
     int numOfPgia;
     int numOfBull;
-    vector<string> allOptions;
+    list <string> allOptions;
 
     
     SmartGuesser();
