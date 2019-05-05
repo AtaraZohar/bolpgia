@@ -64,7 +64,7 @@ void bullpgia::SmartGuesser::startNewGame(uint length){
 			for(int k=0 ;k<=9; k++){
 				for(int w=0 ;w<=9; w++){
 					for(int j=0 ;j<=9; j++){
-						string ans= to_string(i) + to_string(k) + to_string(w)+ to_string(j) ; 
+						string ans=to_string(k) + to_string(w)+ to_string(j) ; 
 						this->allOptions.push_back(ans);
 					}
 				}
@@ -73,14 +73,14 @@ void bullpgia::SmartGuesser::startNewGame(uint length){
     if (length==2){
 				for(int w=0 ;w<=9; w++){
 					for(int j=0 ;j<=9; j++){
-						string ans= to_string(i) + to_string(k) + to_string(w)+ to_string(j) ; 
+						string ans=to_string(w)+ to_string(j) ; 
 						this->allOptions.push_back(ans);
 					}
 				}
 			}
     if (length==1){
 			for(int j=0 ;j<=9; j++){
-				string ans= to_string(i) + to_string(k) + to_string(w)+ to_string(j) ; 
+				string ans=to_string(j) ; 
 				this->allOptions.push_back(ans);
 			}
 		}		
