@@ -9,6 +9,10 @@ string bullpgia::calculateBullAndPgia(string choose, string gusses){
     int bull=0;
     int stringLength=choose.size();
     int arr[10]={0,0,0,0,0,0,0,0,0,0};
+    if(choose.length()!=gusses.length()){
+         std::__throw_bad_exception();
+    }
+    else{
     for(int i=0; i<stringLength;i++){
         arr[choose.at(i)-48]++;
     }
@@ -26,4 +30,5 @@ string bullpgia::calculateBullAndPgia(string choose, string gusses){
     }
     string ans=std::to_string(bull)+","+std::to_string(pgia);
     return ans;
+}
 }
