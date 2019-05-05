@@ -2,7 +2,7 @@
 #include "calculate.hpp"
 //#include <string>
 //#include <iostream>
-using std::string;
+using std::string, std::to_string ,std::fill ;
 
 
 string bullpgia::calculateBullAndPgia(string choose, string gusses){
@@ -27,7 +27,7 @@ string bullpgia::calculateBullAndPgia(string choose, string gusses){
         }
 
     }
-    string ans=bull+","+pgia; 
+    string ans= to_string(bull) + "," + to_string(pgia); 
     return ans;
 }
 

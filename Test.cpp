@@ -103,9 +103,10 @@ int main() {
 			testcase.CHECK_EQUAL(play(randy, smarty, 4, 100)<=100, true);  // smarty should always win in at most 10 turns!
 		}
 
-		string s="1234";
-
-		cout<<"hfkjdkhdjhdxjhdxjhdjg"<<s.at(0)-48<<endl;
+				SmartGuesser gg;
+		gg.learn("4,5");
+		cout<<endl;
+		cout<<"oeriyfeldgc"<<gg.numOfPgia<<endl;
 
     grade = testcase.grade();
 	} else {

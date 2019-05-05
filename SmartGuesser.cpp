@@ -15,8 +15,9 @@
 
         }
 
-  void bullpgia::SmartGuesser::learn(string firstTry){
+        
 
+  void bullpgia::SmartGuesser::learn(string firstTry){
 
       string sbull= firstTry.substr(0,firstTry.find(","));
       int ibull= stoi(sbull);
