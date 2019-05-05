@@ -16,5 +16,6 @@ class SmartGuesser: public bullpgia::Guesser{
     SmartGuesser();
     string guess() override;
      void learn(string firstTry) override;
+     void startNewGame(uint length)override;
 };
 }
